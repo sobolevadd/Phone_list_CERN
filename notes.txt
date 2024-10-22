@@ -1,0 +1,6 @@
+ADD this to DB:
+
+ALTER TABLE Expert
+ADD COLUMN Assigned_expert_id INT UNSIGNED DEFAULT NULL,
+ADD CONSTRAINT fk_assigned_expert
+    FOREIGN KEY (assigned_expert_id) REFERENCES Expert_person(Id);

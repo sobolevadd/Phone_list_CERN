@@ -1,0 +1,272 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+/* Grid Layout Styles */
+.header-row, .data-row {
+    display: flex;
+    border-bottom: 1px solid black; 
+}
+
+.select2-container {
+    width: 100% !important;
+}
+
+.cell {
+    border: 1px solid black; 
+    padding: 10px; 
+    box-sizing: border-box;
+    flex: 1;
+    text-align: left; 
+    background-color: #fff; 
+}
+
+.header-row {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.header-row .cell {
+    border-bottom: 2px solid black; 
+}
+
+.data-row:nth-child(even) .cell{
+    background-color: #E0E0E0; 
+}
+
+.data-row:nth-child(odd) .cell{
+    background-color: #fff; 
+}
+
+.data-row .cell {
+    border-bottom: 1px solid black; 
+}
+
+.data-row:last-child .cell {
+    border-bottom: none; 
+}
+
+/* Action Button Styles */
+.action-button {
+    border-bottom: 2px solid black; 
+    padding: 5px 10px;
+    display: block;
+    width: 100%; 
+    text-align: center; 
+}
+
+/* Button Styles */
+.button-container {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
+    align-items: stretch; 
+}
+
+.button-container .btn {
+    width: 100%; 
+}
+
+.top-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.top-buttons .btn {
+    border-bottom: 2px solid black !important;
+}
+
+#assign-experts-button, #assign-choose-experts-button, #assign-choose-systems-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.edit-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.875rem;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.edit-button:active {
+    background-color: #45a049;
+}
+
+.add-expert-button {
+    background-color: #008CBA;
+}
+
+.add-expert-button:active {
+    background-color: #007bb5;
+}
+
+#current_expert, #sys_name, #exp_name {
+    font-weight: bold;
+}
+
+/* jQuery UI Dialog Styles */
+.ui-dialog .ui-dialog-titlebar {
+    background: #007bff;
+    color: white;
+}
+
+.ui-dialog .ui-dialog-title {
+    color: white;
+}
+
+/* Close button styles */
+.ui-dialog .ui-dialog-titlebar-close {
+    position: absolute;
+    top: 10px; 
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.ui-dialog .ui-dialog-titlebar-close::before {
+    content: '×'; 
+    font-size: 18px; 
+    color: white; 
+    display: block;
+    text-align: center;
+    line-height: 20px;
+}
+
+.ui-dialog .ui-dialog-titlebar-close:hover {
+    background-color: #0056b3; 
+    border-radius: 50%; 
+}
+
+/* Button styles in dialog */
+.ui-dialog .ui-dialog-buttonpane {
+    text-align: center;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset { 
+    width: 100%; 
+    display: flex;
+    justify-content: space-between; 
+}
+
+/* General button styles */
+.save-exit-button, .add-exit-button, .cancel-button {
+    padding: 3px; 
+    border-radius: 5px; 
+    border: none; 
+    margin: 0; 
+    color: white;
+    flex: 1;
+}
+
+/* Styling for Save and Exit button && for Add and Exit button*/
+.save-exit-button, .add-exit-button{
+    background-color: #28a745; 
+    margin-right: auto;
+}
+
+.save-exit-button:hover .add-exit-button:hover{
+    background-color: #218838; 
+}
+
+/* Styling for Cancel button */
+.cancel-button {
+    background-color: #dc3545; 
+    margin-left: auto;
+}
+
+.cancel-button:hover {
+    background-color: #c82333; 
+}
+
+/* Responsive Styles */
+@media (min-width: 769px) {
+    .header-row, .data-row {
+        border-bottom: 1px solid black; 
+    }
+
+    .data-row:last-child  .cell{
+        border-bottom: 1px solid black; 
+    }
+
+    .cell {
+        border-right: 1px solid #ddd;
+    }
+
+    .cell:last-child {
+        border-right: 2px solid black; 
+    }
+}
+
+@media (max-width: 768px) {
+    .header-row{
+        display: none;
+    }
+
+    .data-row {
+        flex-direction: column;
+        border-bottom: 1px solid black; 
+    }
+
+    .cell {
+        border: 1px solid black; 
+        margin: 0; 
+    }
+
+    .cell:not(:last-child) {
+        border-bottom: 1px solid #ddd; 
+    }
+
+    .data-row:last-child .cell {
+        border-bottom: none; 
+    }
+
+    /* Target the text before the content in each cell on small screens */
+    .data-row .cell::before {
+        font-weight: bold;
+    }
+
+    /* Specific label text for each cell */
+    .data-row .cellSys:nth-child(1)::before {
+        content: "System: ";
+    }
+
+    .data-row .cellSys:nth-child(2)::before {
+        content: "Expert: ";
+    }
+
+    .data-row .cellSys:nth-child(3)::before {
+        content: "Phone: ";
+    }
+
+    .data-row .cellExp:nth-child(1)::before {
+        content: "Name: ";
+    }
+
+    .data-row .cellExp:nth-child(2)::before {
+        content: "Phone: ";
+    }
+
+    .data-row .cellExp:nth-child(3)::before {
+        content: "No. Systems: ";
+    }
+}

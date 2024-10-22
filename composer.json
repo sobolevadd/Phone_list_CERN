@@ -1,0 +1,20 @@
+{
+    "name": "myvendor/myproject",
+    "description": "Phone list",
+    "type": "library",
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "authors": [
+        {
+            "name": "Matěj Michálek",
+            "email": "micham20@cvut.cz"
+        },
+        {
+            "name": "Daria Soboleva",
+            "email": "soboldar@cvut.cz"
+        }
+    ],
+    "license": "MIT",
+    "minimum-stability": "stable"
+}
